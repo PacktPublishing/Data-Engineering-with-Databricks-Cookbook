@@ -36,7 +36,8 @@ ARG GROUP=NBuser
 RUN groupadd -r ${GROUP} && useradd -r -m -g ${GROUP} ${NBuser}
 
 RUN chown -R ${NBuser}:${GROUP} /home/${NBuser}/ \
-    && chown -R ${NBuser}:${GROUP} ${SPARK_HOME}
+    && chown -R ${NBuser}:${GROUP} ${SPARK_HOME}\
+    && chown -R ${NBuser}:${GROUP} ${SHARED_WORKSPACE}
 
 USER ${NBuser}
 
