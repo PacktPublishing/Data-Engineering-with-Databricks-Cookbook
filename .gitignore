@@ -9,6 +9,8 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+delta-lake/
+
 # IPython
 profile_default/
 ipython_config.py
