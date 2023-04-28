@@ -18,7 +18,7 @@ LABEL org.label-schema.description="JupyterLab image"
 ARG spark_version
 ARG jupyterlab_version
 
-RUN pip3 install wget==3.2 \
+RUN pip3 install --no-cache-dir wget==3.2 \
     pyspark==${spark_version} \
     jupyterlab==${jupyterlab_version}
 
