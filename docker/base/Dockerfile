@@ -19,11 +19,11 @@ ARG shared_workspace=/opt/workspace
 RUN mkdir -p ${shared_workspace}/data && \
     mkdir -p /usr/share/man/man1  && \
     apt-get update -y && \
-    apt-get install -y curl python3 r-base && \
+    apt-get install -y --no-install-recommends curl python3 r-base && \
     ln -s /usr/bin/python3 /usr/bin/python
 
 RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev && \
+    apt-get install -y --no-install-recommends python3-pip python3-dev && \
     pip3 install --upgrade pip
 
 # We are explicitly pinning the versions of various libraries which this Docker image runs on.
