@@ -9,7 +9,7 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-/data/data-lake/*
+*/data_lake/*
 # IPython
 profile_default/
 ipython_config.py
