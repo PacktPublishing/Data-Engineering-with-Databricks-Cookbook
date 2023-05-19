@@ -15,7 +15,7 @@ JUPYTERLAB_VERSION="3.6.3"
 PANDAS_VERSION="2.0.1"
 DELTA_PACKAGE_VERSION="delta-core_2.12:2.1.0"
 SPARK_VERSION_MAJOR=${SPARK_VERSION:0:1}
-
+SPARK_XML_PACKAGE_VERSION="spark-xml_2.12:0.16.0"
 
 # ----------------------------------------------------------------------------------------------------------------------
 # -- Functions----------------------------------------------------------------------------------------------------------
@@ -86,6 +86,7 @@ function buildImages() {
       --build-arg spark_version="${SPARK_VERSION}" \
       --build-arg hadoop_version="${HADOOP_VERSION}" \
       --build-arg delta_package_version="${DELTA_PACKAGE_VERSION}" \
+      --build-arg spark_xml_package_version="${SPARK_XML_PACKAGE_VERSION}" \
       -f docker/spark-base/Dockerfile \
       -t spark-base:${SPARK_VERSION} .
 

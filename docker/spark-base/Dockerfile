@@ -3,6 +3,7 @@ FROM base
 # -- Layer: Image Metadata
 ARG build_date
 ARG delta_package_version
+ARG spark_xml_package_version
 
 LABEL org.label-schema.build-date=${build_date}
 LABEL org.label-schema.description="Data Engineering wih Apache Spark and Delta Lake Cookbook - Spark base image"
@@ -44,3 +45,5 @@ USER ${NBuser}
 RUN ${SPARK_HOME}/bin/spark-shell --packages io.delta:${delta_package_version} \
     --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" \
     --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"
+
+RUN $SPARK_HOME/bin/spark-shell --packages com.databricks:${spark_xml_package_version}
