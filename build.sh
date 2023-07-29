@@ -7,13 +7,13 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 BUILD_DATE="$(date -u +'%Y-%m-%d')"
-SPARK_VERSION="3.3.1"
+SPARK_VERSION="3.4.0"
 HADOOP_VERSION="3"
-DELTA_SPARK_VERSION="2.1.0"
-DELTALAKE_VERSION="0.6.4"
-JUPYTERLAB_VERSION="3.6.3"
+DELTA_SPARK_VERSION="2.4.0"
+DELTALAKE_VERSION="0.10.0"
+JUPYTERLAB_VERSION="4.0.2"
 PANDAS_VERSION="2.0.1"
-DELTA_PACKAGE_VERSION="delta-core_2.12:2.1.0"
+DELTA_PACKAGE_VERSION="delta-core_2.12:2.4.0"
 SPARK_VERSION_MAJOR=${SPARK_VERSION:0:1}
 SPARK_XML_PACKAGE_VERSION="spark-xml_2.12:0.16.0"
 

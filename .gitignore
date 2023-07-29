@@ -10,6 +10,7 @@
 */.ipynb_checkpoints/*
 
 */data_lake/*
+*/delta_lake/*
 # IPython
 profile_default/
 ipython_config.py
