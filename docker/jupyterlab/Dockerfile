@@ -11,20 +11,23 @@ LABEL org.label-schema.description="JupyterLab image"
 
 # -- Layer: Notebooks and data
 
-# ADD workspace/ ${SHARED_WORKSPACE}/
+# ADD docker/jupyterlab/kafka-producer.py /
 
 # -- Layer: JupyterLab + Python kernel for PySpark
 
 ARG spark_version
 ARG jupyterlab_version
+ARG sparksql_magic_version
+ARG kafka_python_version
 
 RUN pip3 install --no-cache-dir wget==3.2 \
     pyspark==${spark_version} \
     jupyterlab==${jupyterlab_version} \
-    sparksql-magic
+    sparksql-magic==${sparksql_magic_version} \
+    kafka-python==${kafka_python_version}
 
 EXPOSE 8888
 
 WORKDIR ${SHARED_WORKSPACE}
 # COPY docker/jupyterlab/00-first.py /root/.ipython/profile_default/startup/00-first.py
-CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=
+CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=;python ./kafka-producer.py
