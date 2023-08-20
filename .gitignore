@@ -9,6 +9,8 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+
+images/*
 */data_lake/*
 */delta_lake/*
 # IPython
