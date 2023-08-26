@@ -30,4 +30,4 @@ EXPOSE 8888
 
 WORKDIR ${SHARED_WORKSPACE}
 # COPY docker/jupyterlab/00-first.py /root/.ipython/profile_default/startup/00-first.py
-CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=;python ./kafka-producer.py
+CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=;python
