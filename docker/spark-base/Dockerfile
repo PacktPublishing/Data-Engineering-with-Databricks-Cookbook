@@ -36,16 +36,15 @@ ARG GROUP=NBuser
 
 RUN groupadd -r ${GROUP} && useradd -r -m -g ${GROUP} ${NBuser}
 
-RUN chown -R ${NBuser}:${GROUP} /home/${NBuser}/ \
-    && chown -R ${NBuser}:${GROUP} ${SPARK_HOME}\
-    && chown -R ${NBuser}:${GROUP} ${SHARED_WORKSPACE}
+RUN chown -R "${NBuser}":"${GROUP}" /home/"${NBuser}"/ \
+    && chown -R "${NBuser}":"${GROUP}" "${SPARK_HOME}"\
+    && chown -R "${NBuser}":"${GROUP}" "${SHARED_WORKSPACE}"
 
 USER ${NBuser}
 
 
 RUN ${SPARK_HOME}/bin/spark-shell --packages io.delta:${delta_package_version} \
     --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" \
-    --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"
-
-RUN $SPARK_HOME/bin/spark-shell --packages com.databricks:${spark_xml_package_version}
-RUN ${SPARK_HOME}/bin/spark-shell --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1
+    --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
+ && ${SPARK_HOME}/bin/spark-shell --packages com.databricks:${spark_xml_package_version} \
+ && ${SPARK_HOME}/bin/spark-shell --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1
