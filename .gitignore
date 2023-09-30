@@ -9,10 +9,11 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-
+.Trash*
 images/*
-*/data_lake/*
-*/delta_lake/*
+data/data_lake/*
+data/delta_lake/*
+data/tmp/*
 # IPython
 profile_default/
 ipython_config.py
