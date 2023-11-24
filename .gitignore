@@ -6,6 +6,16 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
+
+.databricks/
+build/
+dist/
+__pycache__/
+*.egg-info
+.venv/
+scratch/**
+!scratch/README.md
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
