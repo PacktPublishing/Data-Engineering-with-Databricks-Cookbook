@@ -1,2 +1,2 @@
-# Data-Engineering-with-Apache-Spark-and-Delta-Lake-Cookbook
-Data Engineering with Apache Spark and Delta Lake Cookbook, published by Packt
+# Data Engineering with Databricks Lakehouse Cookbook
+Data Engineering with Databricks Lakehouse Cookbook, published by Packt
