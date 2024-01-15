@@ -1,0 +1,44 @@
+resources:
+  jobs:
+    On_Shelf_Availability_Workflow:
+      name: On-Shelf-Availability Workflow
+      schedule:
+        quartz_cron_expression: 36 0 0 * * ?
+        timezone_id: UTC
+        pause_status: PAUSED
+      tasks:
+        - task_key: Setup
+          notebook_task:
+            notebook_path: /Repos/pulkit.chadha.packt@gmail.com/Data-Engineering-with-Apache-Spark-and-Delta-Lake-Cookbook/Chapter08/Setup
+            base_parameters:
+              catalog: main
+              schema: on_shelf_availability
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+        - task_key: Download_Inventory_Data
+          depends_on:
+            - task_key: Setup
+          notebook_task:
+            notebook_path: /Repos/pulkit.chadha.packt@gmail.com/Data-Engineering-with-Apache-Spark-and-Delta-Lake-Cookbook/Chapter08/Download
+              Inventory Data
+            base_parameters:
+              catalog: main
+              schema: on_shelf_availability
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            cluster_name: ""
+            spark_version: 14.2.x-scala2.12
+            aws_attributes:
+              first_on_demand: 1
+              availability: SPOT_WITH_FALLBACK
+              zone_id: us-west-2a
+              spot_bid_price_percent: 100
+              ebs_volume_count: 0
+            node_type_id: i4i.large
+            enable_elastic_disk: false
+            data_security_mode: SINGLE_USER
+            runtime_engine: STANDARD
+            num_workers: 2
