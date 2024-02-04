@@ -16,7 +16,7 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://e2-demo-field-eng.cloud.databricks.com/
+      host: https://adb-7934447987890817.7.azuredatabricks.net/
 
   # The 'prod' target, used for production deployment.
   prod:
@@ -25,7 +25,7 @@ targets:
     # to a path that is not specific to the current user.
     mode: production
     workspace:
-      host: https://e2-demo-field-eng.cloud.databricks.com/
+      host: https://adb-7934447987890817.7.azuredatabricks.net/
       root_path: /Shared/.bundle/prod/${bundle.name}
     run_as:
       # Use service principal could be used here using service_principal_name
