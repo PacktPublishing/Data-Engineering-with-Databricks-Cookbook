@@ -1,0 +1,34 @@
+# The main job for dabs_cicd_example
+resources:
+  jobs:
+    dabs_cicd_example_job:
+      name: dabs_cicd_example_job
+
+      schedule:
+        quartz_cron_expression: '44 37 8 * * ?'
+        timezone_id: Europe/Amsterdam
+
+      email_notifications:
+        on_failure:
+          - pulkit.chadha@databricks.com
+
+      tasks:
+        - task_key: notebook_task
+          job_cluster_key: job_cluster
+          notebook_task:
+            notebook_path: ../src/notebook.ipynb
+        
+        - task_key: refresh_pipeline
+          depends_on:
+            - task_key: notebook_task
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.dabs_cicd_example_pipeline.id}
+        
+      job_clusters:
+        - job_cluster_key: job_cluster
+          new_cluster:
+            spark_version: 13.3.x-scala2.12
+            node_type_id: i3.xlarge
+            autoscale:
+                min_workers: 1
+                max_workers: 4

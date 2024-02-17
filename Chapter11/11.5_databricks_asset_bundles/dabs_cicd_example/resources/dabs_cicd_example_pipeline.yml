@@ -1,0 +1,12 @@
+# The main pipeline for dabs_cicd_example
+resources:
+  pipelines:
+    dabs_cicd_example_pipeline:
+      name: dabs_cicd_example_pipeline
+      target: dabs_cicd_example_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
