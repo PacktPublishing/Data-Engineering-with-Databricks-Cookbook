@@ -1,0 +1,12 @@
+# The main pipeline for de_book_dabs_example
+resources:
+  pipelines:
+    de_book_dabs_example_pipeline:
+      name: de_book_dabs_example_pipeline
+      target: de_book_dabs_example_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
