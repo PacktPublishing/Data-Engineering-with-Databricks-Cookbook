@@ -1,2 +1,2 @@
-# Data Engineering with Databricks Lakehouse Cookbook
-Data Engineering with Databricks Lakehouse Cookbook, published by Packt
+# Data Engineering with Databricks Cookbook
+Data Engineering with Databricks Cookbook, published by Packt
