@@ -10,7 +10,7 @@ resources:
 
       email_notifications:
         on_failure:
-          - pulkit.chadha@databricks.com
+          - pulkit.chadha.packt@gmail.com
 
       tasks:
         - task_key: notebook_task
