@@ -39,7 +39,7 @@ spark.sparkContext.setLogLevel("ERROR")
 ```
 
 **Following is what you need for this book:**
-If you’re interested in expanding your analytical toolkit, this book is for you. It will be particularly valuable for data analysts wanting to rapidly explore and query complex data, data and software engineers looking for a lean and versatile data processing tool, along with data scientists needing a scalable data manipulation library that integrates seamlessly with Python and R. You will get the most from this book if you have some familiarity with SQL and foundational database concepts, as well as exposure to a programming language such as Python or R.
+This book is for data engineers, data scientists, and data practitioners who want to learn how to build efficient and scalable data pipelines using Apache Spark, Delta Lake, and Databricks. To get the most out of this book, you should have basic knowledge of data architecture, SQL, and Python programming.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
 ### Software and Hardware List
