@@ -2,7 +2,7 @@
 
 <a href="https://www.packtpub.com/product/data-engineering-with-databricks-cookbook/9781837633357"><img src="(https://content.packt.com/_/image/original/B19798/cover_image_large.jpg)" alt="no-image" height="256px" align="right"></a>
 
-This is the code repository for [Data Engineering with Databricks Cookbook](https://www.packtpub.com/product/azure-architecture-explained/9781837634811?utm_source=github&utm_medium=repository&utm_campaign=9781786461629), published by Packt.
+This is the code repository for [Data Engineering with Databricks Cookbook](https://www.packtpub.com/product/data-engineering-with-databricks-cookbook/9781837633357), published by Packt.
 
 **Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake**
 
