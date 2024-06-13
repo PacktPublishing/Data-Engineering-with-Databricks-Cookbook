@@ -7,7 +7,7 @@ This is the code repository for [Data Engineering with Databricks Cookbook](http
 **Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake**
 
 ## What is this book about?
-Data Engineering with Databricks Cookbook will guide you through recipes to effectively use Apache Spark, Delta Lake, and Databricks for data engineering, beginning with an introduction to data ingestion and loading with Apache Spark.
+This book shows you how to use Apache Spark, Delta Lake, and Databricks to build data pipelines, manage and transform data, optimize performance, and more. Additionally, you’ll implement DataOps and DevOps practices, and orchestrate data workflows.
 
 This book covers the following exciting features:
 * Perform data loading, ingestion, and processing with Apache Spark
