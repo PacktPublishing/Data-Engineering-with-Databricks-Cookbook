@@ -1,4 +1,4 @@
-ARG java_image_tag=17-jre
+ARG java_image_tag=17-jre-jammy
 FROM eclipse-temurin:${java_image_tag}
 
 # -- Layer: Image Metadata
